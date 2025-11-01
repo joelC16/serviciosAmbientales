@@ -1,10 +1,10 @@
-import { Navigation } from "@/components/navigation"
-import { Button } from "@/components/ui/button"
-import Link from "next/link"
-import Image from "next/image"
-import Nosotros from "@/components/nosotros"
-import NuestrosServicios from "@/components/nuestrosServicios"
-import Contacto from "@/components/contacto"
+import { Navigation } from "@/components/navigation";
+import { Button } from "@/components/ui/button";
+import Link from "next/link";
+import Image from "next/image";
+import Nosotros from "@/components/nosotros";
+import NuestrosServicios from "@/components/nuestrosServicios";
+import Contacto from "@/components/contacto";
 
 export default function HomePage() {
   return (
@@ -14,10 +14,9 @@ export default function HomePage() {
       {/* Hero Section */}
       <section className="relative min-h-screen flex items-center justify-center">
         <div
-          className="absolute inset-0 z-0"
+          className="fixed inset-0 z-0"
           style={{
-            backgroundImage:
-              "url(/fondoHeader.png)",
+            backgroundImage: "url(/fondoHeader.png)",
             backgroundSize: "cover",
             backgroundPosition: "center",
           }}
@@ -27,30 +26,30 @@ export default function HomePage() {
 
         <div className="relative z-10 container mx-auto px-6 text-center">
           <div className="mb-8 flex flex-row items-center justify-center">
-            {/* <div className="mr-8">
-              <Image src="/logo.png" width={210} height={210} alt="Logo de Servicios Ambientales"></Image>
-            </div>
-            <h1 className="text-6xl md:text-7xl font-bold mb-6 text-left">
-              <span className="block">Servicios</span>
-              <span className="block">Ambientales</span>
-            </h1> */}
             <div className="relative w-[80%] sm:w-2/3 lg:w-1/2 h-55">
-              <Image src={"/logoHeader.svg"} fill alt="Logo de servicios ambientales"></Image>
+              <Image
+                src={"/logoHeader.svg"}
+                fill
+                alt="Logo de servicios ambientales"
+              ></Image>
             </div>
           </div>
 
-
+          <p className="text-xl md:text-2xl mb-3 mx-auto text-pretty leading-relaxed">
+            GESTIÓN AMBIENTAL <span className="px-6">|</span> HIGIENE Y
+            SEGURIDAD <span className="px-6">|</span> LABORATORIO
+          </p>
           <p className="text-xl md:text-2xl mb-8 max-w-3xl mx-auto text-pretty leading-relaxed">
-            Consultoría Ambiental, Higiene y Seguridad para Empresas que Quieren Cumplir, Optimizar y Cuidar el Entorno.
+            Comprometidos con un futuro sostenible
           </p>
 
-          <Button
+          {/* <Button
             asChild
             size="lg"
             className="bg-[#E5E6CC] text-foreground hover:bg-white/90 rounded-full px-10 py-8 text-[1.15rem]"
           >
             <Link href="/contacto">Quiero Asesoramiento</Link>
-          </Button>
+          </Button> */}
         </div>
       </section>
       <section className="relative min-h-screen flex-col items-center justify-center">
@@ -58,7 +57,6 @@ export default function HomePage() {
         <NuestrosServicios></NuestrosServicios>
         <Contacto></Contacto>
       </section>
-
     </div>
-  )
+  );
 }

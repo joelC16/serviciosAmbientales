@@ -1,115 +1,175 @@
-import { Navigation } from "@/components/navigation"
-import { Footer } from "@/components/footer"
-import { Handshake, Search, Award, Zap, Leaf } from "lucide-react"
-import Image from "next/image"
+"use client";
+
+import { useState } from "react";
+import Image from "next/image";
 
 export default function NuestrosServicios() {
-    return (
-        <div className="min-h-screen flex flex-col bg-background">
-            <main className="flex-1">
-                <section className="py-20 px-6 sm:px-10 bg-white">
-                    <div className="max-w-7xl mx-auto">
-                        <h1 className="text-5xl md:text-6xl font-bold mb-14 text-balance text-[#243606] text-center">Nuestros servicios</h1>
+  const [expanded1, setExpanded1] = useState(false);
+  const [expanded2, setExpanded2] = useState(false);
+  const [expanded3, setExpanded3] = useState(false);
 
-                        <div className="flex flex-col gap-16">
-                            {/* FILA 1 */}
-                            <div className="flex flex-col md:flex-row items-stretch md:items-stretch justify-between gap-4">
-                                {/* Bloque de texto */}
-                                <div className="bg-[#243606] text-white rounded-[2rem] p-6 py-14 w-full md:w-[60%] max-w-[470px] flex flex-col justify-end gap-4">
-                                    <h2 className="text-xl sm:text-2xl lg:text-3xl font-bold">Gestión ambiental</h2>
-                                    <p className="text-base sm:text-lg lg:text-[1.2rem]">
-                                        Brindamos asesoramiento integral para garantizar el cumplimiento de la normativa ambiental
-                                        y promover prácticas sostenibles que reduzcan el impacto ambiental de cada actividad.
-                                    </p>
-                                </div>
+  const servicios = [
+    {
+      titulo: "Gestión ambiental",
+      color: "bg-[#243606]",
+      colorTexto: "text-white",
+      texto:
+        "Brindamos asesoramiento integral para garantizar el cumplimiento de la normativa ambiental y promover prácticas sostenibles que reduzcan el impacto ambiental de cada actividad.",
+      lista: [
+        "Impacto Ambiental (CAA, EIA, AA)",
+        "Gestión, declaraciones juradas y asesoramiento integral de los residuos",
+        "Efluentes Gaseosos (LEGA, REF)",
+        "Efluentes Líquidos (ADA, AySA, ACUMAR)",
+        "Contaminación Acústica (RAC, Ruidos molestos)",
+        "Pasivos ambientales (FASE I y FASE II)",
+        "Sistemas de gestión",
+        "Asesoramiento legal ambiental",
+        "Seguimiento de expedientes, respuesta ante inspecciones y/o notificaciones pendientes, etc."
+      ],
+      imagen: "/servicios1.png",
+      imagenDerecha: true
+    },
+    {
+      titulo: "Higiene y seguridad en el trabajo",
+      color: "bg-[#7F8000]",
+      colorTexto: "text-white",
+      texto:
+        "Implementamos medidas preventivas y programas de seguridad para proteger la salud de los trabajadores y optimizar las condiciones laborales.",
+      lista: [
+        "Realización de estudios",
+        "Relevamientos generales",
+        "Respuesta a emergencias",
+        "Capacitaciones",
+        "Sistemas de Autoprotección (SAP)",
+        "Construcción"
+      ],
+      imagen: "/servicios2.png",
+      imagenDerecha: false
+    },
+    {
+      titulo: "Laboratorio",
+      color: "bg-[#E5E6CC]",
+      colorTexto: "text-[#243606]",
+      texto:
+        "Realizamos controles y análisis periódicos del aire, agua, suelo y ruido, asegurando el seguimiento constante de los parámetros ambientales.",
+      lista: [
+        "Monitoreos y análisis de agua",
+        "Monitoreos y análisis de suelo",
+        "Monitoreos y análisis de aire",
+      ],
+      imagen: "/servicios3.png",
+      imagenDerecha: true
+    }
+  ];
 
-                                {/* Imagen */}
-                                <div className="relative rounded-[2rem] overflow-hidden w-full md:w-[60%] h-[420px] sm:h-[520px]">
-                                    <Image
-                                        src="/servicios1.png"
-                                        alt="Gestión ambiental"
-                                        fill
-                                        className="w-full h-full object-cover"
-                                    />
-                                </div>
-                            </div>
+  const expandedStates = [expanded1, expanded2, expanded3];
+  const setExpandedStates = [setExpanded1, setExpanded2, setExpanded3];
 
-                            {/* FILA 2 - invertida */}
-                            <div className="flex flex-col md:flex-row-reverse items-stretch md:items-stretch justify-between gap-4">
-                                {/* Bloque de texto */}
-                                <div className="bg-[#7F8000] text-white rounded-[2rem] p-6 py-14 w-full md:w-[60%] max-w-[470px] flex flex-col justify-end gap-4">
-                                    <h2 className="text-xl sm:text-2xl lg:text-3xl font-bold">Higiene y seguridad en el trabajo</h2>
-                                    <p className="text-base sm:text-lg lg:text-[1.2rem]">
-                                        Implementamos medidas preventivas y programas de seguridad para proteger la salud de los trabajadores
-                                        y optimizar las condiciones laborales.
-                                    </p>
-                                </div>
+  return (
+    <section className="py-20 px-6 sm:px-10 bg-white overflow-hidden">
+      <h1 className="text-5xl md:text-6xl font-bold mb-14 text-balance text-[#243606] text-center">
+        Nuestros servicios
+      </h1>
+      <div className="max-w-7xl mx-auto flex flex-col gap-14">
+        {servicios.map((serv, i) => (
+          <div key={i} className={`relative flex flex-col md:flex-row items-stretch justify-between gap-4 ${!serv.imagenDerecha ? 'md:flex-row-reverse' : ''}`}>
+            <ServicioBloque
+              expanded={expandedStates[i]}
+              setExpanded={setExpandedStates[i]}
+              titulo={serv.titulo}
+              texto={serv.texto}
+              lista={serv.lista}
+              imagen={serv.imagen}
+              color={serv.color}
+              colorTexto={serv.colorTexto}
+              imagenDerecha={serv.imagenDerecha}
+              esSegundo={i === 1}
+            />
+          </div>
+        ))}
+      </div>
+    </section>
+  );
+}
 
-                                {/* Imagen */}
-                                <div className="relative rounded-[2rem] overflow-hidden w-full md:w-[60%] h-[420px] sm:h-[520px]">
-                                    <Image
-                                        src="/servicios2.png"
-                                        alt="Higiene y seguridad"
+function ServicioBloque({ expanded, setExpanded, titulo, texto, lista, imagen, color, colorTexto, imagenDerecha, esSegundo }: any) {
+  return (
+    <>
+      <div
+        className={`
+          ${color}  rounded-[2rem] p-6
+          relative z-20 flex flex-col md:flex-row transition-all duration-500 ease-out
+          ${expanded ? "md:w-full md:h-[520px]" : "md:w-[60%] max-w-[470px] h-[420px] sm:h-[520px]"}
+        `}
+      >
+        {/* CONTENIDO SECUNDARIO - SOLO PARA EL SEGUNDO BLOQUE EXPANDIDO */}
+        {esSegundo && expanded && (
+          <div
+            className={`
+              md:w-[65%] flex flex-col justify-start p-6
+              transition-all duration-500 ease-out
+              transform translate-x-0
+            `}
+          >
+            <ul className={`text-base sm:text-lg leading-relaxed space-y-2 list-disc pl-5`}>
+              {lista.map((item: string, idx: number) => (
+                <li className={`${colorTexto} text-black`} key={idx}>{item}</li>
+              ))}
+            </ul>
+          </div>
+        )}
 
-                                        fill
-                                        className="w-full h-full object-cover"
-                                    />
-                                </div>
-                            </div>
-                            {/* FILA 3 */}
-                            <div className="flex flex-col md:flex-row items-stretch md:items-stretch justify-between gap-4">
-                                {/* Bloque de texto */}
-                                <div className="bg-[#F6B317] text-white rounded-[2rem] p-6 py-14 w-full md:w-[60%] max-w-[470px] flex flex-col justify-end gap-4">
-                                    <h2 className="text-xl sm:text-2xl lg:text-3xl font-bold">Monitoreo ambiental</h2>
-                                    <p className="text-base sm:text-lg lg:text-[1.2rem]">
-                                        Realizamos controles y análisis periódicos del aire, agua, suelo y ruido, asegurando el seguimiento constante de los parámetros ambientales.
-                                    </p>
-                                </div>
+        {/* TEXTO PRINCIPAL */}
+        <div
+          className={`
+            flex flex-col transition-all duration-500 ease-out
+            ${expanded
+              ? esSegundo 
+                ? "w-full md:w-[35%] md:justify-start text-left"
+                : "w-full md:w-[35%] md:justify-start text-left"
+              : "w-full justify-end text-left"
+            }
+            relative z-20
+          `}
+        >
+          <h2 className={`${colorTexto} text-xl sm:text-2xl lg:text-3xl font-bold mb-4`}>{titulo}</h2>
+          <p className={`${colorTexto} text-base sm:text-lg lg:text-[1.15rem] mb-6 leading-relaxed`}>{texto}</p>
 
-                                {/* Imagen */}
-                                <div className="relative rounded-[2rem] overflow-hidden w-full md:w-[60%] h-[420px] sm:h-[520px]">
-                                    <Image
-                                        src="/servicios3.png"
-                                        alt="Gestión ambiental"
-                                        fill
-                                        className="w-full h-full object-cover"
-                                    />
-                                </div>
-                            </div>
-
-                            {/* FILA 4 - invertida */}
-                            <div className="flex flex-col md:flex-row-reverse items-stretch md:items-stretch justify-between gap-4">
-                                {/* Bloque de texto */}
-                                <div className="bg-[#E87522] text-white rounded-[2rem] p-6 py-14 w-full md:w-[60%] max-w-[470px] flex flex-col justify-end gap-4">
-                                    <h2 className="text-xl sm:text-2xl lg:text-3xl font-bold">Relevamientos generales</h2>
-                                    <p className="text-base sm:text-lg lg:text-[1.2rem]">
-                                        Llevamos a cabo diagnósticos técnicos y evaluaciones en campo que permiten conocer el estado actual de las instalaciones y planificar acciones de mejora.  
-                                    </p>
-                                </div>
-
-                                {/* Imagen */}
-                                <div className="relative rounded-[2rem] overflow-hidden w-full md:w-[60%] h-[420px] sm:h-[520px]">
-                                    <Image
-                                        src="/servicios4.png"
-                                        alt="Higiene y seguridad"
-
-                                        fill
-                                        className="w-full h-full object-cover"
-                                    />
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-
-
-
-
-
-
-
-            </main>
-
+          <button
+            onClick={() => setExpanded(!expanded)}
+            className="w-fit bg-[#F6B317] hover:bg-[#d99410] text-foreground rounded-full py-3 px-10 text-sm font-semibold transition-colors duration-200"
+          >
+            {expanded ? "- INFO" : "+ INFO"}
+          </button>
         </div>
-    )
+
+        {/* CONTENIDO SECUNDARIO - PARA TODOS LOS BLOQUES EXCEPTO EL SEGUNDO */}
+        {!esSegundo && expanded && (
+          <div
+            className={`
+              md:w-[65%] flex flex-col justify-start p-6
+              transition-all duration-500 ease-out
+            `}
+          >
+            <ul className="text-base sm:text-lg leading-relaxed space-y-2 list-disc pl-5">
+              {lista.map((item: string, idx: number) => (
+                <li className={`${colorTexto} `} key={idx}>{item}</li>
+              ))}
+            </ul>
+          </div>
+        )}
+      </div>
+
+      {/* IMAGEN */}
+      <div
+        className={`
+          relative rounded-[2rem] overflow-hidden transition-all duration-500 ease-out
+          ${expanded ? "opacity-0 md:w-0 md:absolute" : "w-full md:w-[60%] h-[420px] sm:h-[520px]"}
+          ${!imagenDerecha ? "md:order-1" : ""}
+        `}
+      >
+        {!expanded && <Image src={imagen} alt={titulo} fill className="w-full h-full object-cover" />}
+      </div>
+    </>
+  );
 }
