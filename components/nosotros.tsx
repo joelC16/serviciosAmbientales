@@ -98,7 +98,7 @@ export default function NosotrosPage() {
                 {/* Misión */}
                 <div>
                   <div className="flex items-center gap-3 mb-6 justify-center md:justify-start">
-                    <Image src="/iconMision.png" width={125} height={125} alt="Misión" className="w-12 sm:w-16 h-auto" />
+                    <Image src="/iconMision.svg" width={125} height={125} alt="Misión" className="w-12 sm:w-16 h-auto" />
                     <h2 className="text-xl sm:text-2xl lg:text-3xl font-bold text-[#3F3A34]">Misión</h2>
                   </div>
                   <div className="space-y-5 leading-relaxed text-center md:text-left">
@@ -116,7 +116,7 @@ export default function NosotrosPage() {
                 {/* Visión */}
                 <div>
                   <div className="flex items-center gap-3 mb-6 justify-center md:justify-start">
-                    <Image src="/iconVision.png" width={135} height={135} alt="Visión" className="w-12 sm:w-16 h-auto" />
+                    <Image src="/iconVision.svg" width={135} height={135} alt="Visión" className="w-12 sm:w-16 h-auto" />
                     <h2 className="text-xl sm:text-2xl lg:text-3xl font-bold text-[#3F3A34]">Visión</h2>
                   </div>
                   <div className="space-y-5 leading-relaxed text-center md:text-left">

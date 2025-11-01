@@ -34,8 +34,8 @@ export default function HomePage() {
               <span className="block">Servicios</span>
               <span className="block">Ambientales</span>
             </h1> */}
-            <div className="relative w-1/2 h-55">
-              <Image src={"/logoHeader.png"} fill alt="Logo de servicios ambientales"></Image>
+            <div className="relative w-[80%] sm:w-2/3 lg:w-1/2 h-55">
+              <Image src={"/logoHeader.svg"} fill alt="Logo de servicios ambientales"></Image>
             </div>
           </div>
 
