@@ -24,10 +24,10 @@ export default function NuestrosServicios() {
         "Pasivos ambientales (FASE I y FASE II)",
         "Sistemas de gestión",
         "Asesoramiento legal ambiental",
-        "Seguimiento de expedientes, respuesta ante inspecciones y/o notificaciones pendientes, etc."
+        "Seguimiento de expedientes, respuesta ante inspecciones y/o notificaciones pendientes, etc.",
       ],
-      imagen: "/servicios1.png",
-      imagenDerecha: true
+      imagen: "/servicios1.svg",
+      imagenDerecha: true,
     },
     {
       titulo: "Higiene y seguridad en el trabajo",
@@ -41,10 +41,10 @@ export default function NuestrosServicios() {
         "Respuesta a emergencias",
         "Capacitaciones",
         "Sistemas de Autoprotección (SAP)",
-        "Construcción"
+        "Construcción",
       ],
-      imagen: "/servicios2.png",
-      imagenDerecha: false
+      imagen: "/servicios2.svg",
+      imagenDerecha: false,
     },
     {
       titulo: "Laboratorio",
@@ -57,9 +57,9 @@ export default function NuestrosServicios() {
         "Monitoreos y análisis de suelo",
         "Monitoreos y análisis de aire",
       ],
-      imagen: "/servicios3.png",
-      imagenDerecha: true
-    }
+      imagen: "/servicios3.svg",
+      imagenDerecha: true,
+    },
   ];
 
   const expandedStates = [expanded1, expanded2, expanded3];
@@ -72,7 +72,12 @@ export default function NuestrosServicios() {
       </h1>
       <div className="max-w-7xl mx-auto flex flex-col gap-14">
         {servicios.map((serv, i) => (
-          <div key={i} className={`relative flex flex-col md:flex-row items-stretch justify-between gap-4 ${!serv.imagenDerecha ? 'md:flex-row-reverse' : ''}`}>
+          <div
+            key={i}
+            className={`relative flex flex-col md:flex-row items-stretch justify-between gap-4 ${
+              !serv.imagenDerecha ? "md:flex-row-reverse" : ""
+            }`}
+          >
             <ServicioBloque
               expanded={expandedStates[i]}
               setExpanded={setExpandedStates[i]}
@@ -88,18 +93,38 @@ export default function NuestrosServicios() {
           </div>
         ))}
       </div>
+      <div className="flex items-center justify-center w-full mt-14">
+        <button className="w-fit bg-[#F6B317] hover:bg-[#d99410] text-foreground rounded-full py-5 px-14 text-[1.1rem] font-semibold transition-colors duration-200">
+          Descargar Brochure Completo
+        </button>
+      </div>
     </section>
   );
 }
 
-function ServicioBloque({ expanded, setExpanded, titulo, texto, lista, imagen, color, colorTexto, imagenDerecha, esSegundo }: any) {
+function ServicioBloque({
+  expanded,
+  setExpanded,
+  titulo,
+  texto,
+  lista,
+  imagen,
+  color,
+  colorTexto,
+  imagenDerecha,
+  esSegundo,
+}: any) {
   return (
     <>
       <div
         className={`
           ${color}  rounded-[2rem] p-6
           relative z-20 flex flex-col md:flex-row transition-all duration-500 ease-out
-          ${expanded ? "md:w-full md:h-[520px]" : "md:w-[60%] max-w-[470px] h-[420px] sm:h-[520px]"}
+          ${
+            expanded
+              ? "md:w-full md:h-[520px]"
+              : "md:w-[60%] max-w-[470px] h-[420px] sm:h-[520px]"
+          }
         `}
       >
         {/* CONTENIDO SECUNDARIO - SOLO PARA EL SEGUNDO BLOQUE EXPANDIDO */}
@@ -111,9 +136,13 @@ function ServicioBloque({ expanded, setExpanded, titulo, texto, lista, imagen, c
               transform translate-x-0
             `}
           >
-            <ul className={`text-base sm:text-lg leading-relaxed space-y-2 list-disc pl-5`}>
+            <ul
+              className={`text-base sm:text-lg leading-relaxed space-y-2 list-disc pl-5`}
+            >
               {lista.map((item: string, idx: number) => (
-                <li className={`${colorTexto} text-black`} key={idx}>{item}</li>
+                <li className={`${colorTexto} text-black`} key={idx}>
+                  {item}
+                </li>
               ))}
             </ul>
           </div>
@@ -123,17 +152,26 @@ function ServicioBloque({ expanded, setExpanded, titulo, texto, lista, imagen, c
         <div
           className={`
             flex flex-col transition-all duration-500 ease-out
-            ${expanded
-              ? esSegundo 
-                ? "w-full md:w-[35%] md:justify-start text-left"
-                : "w-full md:w-[35%] md:justify-start text-left"
-              : "w-full justify-end text-left"
+            ${
+              expanded
+                ? esSegundo
+                  ? "w-full md:w-[35%] md:justify-start text-left"
+                  : "w-full md:w-[35%] md:justify-start text-left"
+                : "w-full justify-end text-left"
             }
             relative z-20
           `}
         >
-          <h2 className={`${colorTexto} text-xl sm:text-2xl lg:text-3xl font-bold mb-4`}>{titulo}</h2>
-          <p className={`${colorTexto} text-base sm:text-lg lg:text-[1.15rem] mb-6 leading-relaxed`}>{texto}</p>
+          <h2
+            className={`${colorTexto} text-xl sm:text-2xl lg:text-3xl font-bold mb-4`}
+          >
+            {titulo}
+          </h2>
+          <p
+            className={`${colorTexto} text-base sm:text-lg lg:text-[1.15rem] mb-6 leading-relaxed`}
+          >
+            {texto}
+          </p>
 
           <button
             onClick={() => setExpanded(!expanded)}
@@ -153,7 +191,9 @@ function ServicioBloque({ expanded, setExpanded, titulo, texto, lista, imagen, c
           >
             <ul className="text-base sm:text-lg leading-relaxed space-y-2 list-disc pl-5">
               {lista.map((item: string, idx: number) => (
-                <li className={`${colorTexto} `} key={idx}>{item}</li>
+                <li className={`${colorTexto} `} key={idx}>
+                  {item}
+                </li>
               ))}
             </ul>
           </div>
@@ -164,11 +204,22 @@ function ServicioBloque({ expanded, setExpanded, titulo, texto, lista, imagen, c
       <div
         className={`
           relative rounded-[2rem] overflow-hidden transition-all duration-500 ease-out
-          ${expanded ? "opacity-0 md:w-0 md:absolute" : "w-full md:w-[60%] h-[420px] sm:h-[520px]"}
+          ${
+            expanded
+              ? "opacity-0 md:w-0 md:absolute"
+              : "w-full md:w-[60%] h-[420px] sm:h-[520px]"
+          }
           ${!imagenDerecha ? "md:order-1" : ""}
         `}
       >
-        {!expanded && <Image src={imagen} alt={titulo} fill className="w-full h-full object-cover" />}
+        {!expanded && (
+          <Image
+            src={imagen}
+            alt={titulo}
+            fill
+            className="w-full h-full object-cover"
+          />
+        )}
       </div>
     </>
   );

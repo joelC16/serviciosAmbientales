@@ -14,27 +14,18 @@ export function Navigation() {
     const handleScroll = () => {
       const currentScrollY = window.scrollY
 
-      // Si bajamos, ocultamos el nav
       if (currentScrollY > lastScrollY && currentScrollY > 50) {
         setShowNav(false)
       } else {
-        // Si subimos, mostramos nav y fondo verde
         setShowNav(true)
-        if (currentScrollY > 50) {
-          setBgGreen(true)
-        } else {
-          setBgGreen(false)
-        }
+        setBgGreen(currentScrollY > 50)
       }
 
       setLastScrollY(currentScrollY)
     }
 
     window.addEventListener("scroll", handleScroll)
-
-    return () => {
-      window.removeEventListener("scroll", handleScroll)
-    }
+    return () => window.removeEventListener("scroll", handleScroll)
   }, [lastScrollY])
 
   return (
@@ -43,7 +34,8 @@ export function Navigation() {
         showNav ? "translate-y-0" : "-translate-y-full"
       } ${bgGreen ? "bg-[#2d4a1f]" : "bg-transparent"}`}
     >
-      <div className="container mx-auto px-6 py-6 flex items-center justify-between">
+      <div className="relative container mx-auto px-6 py-6 flex items-center justify-between">
+        {/* LOGO */}
         <Link href="/" className="text-2xl font-bold w-36 text-white">
           <Image
             src="/logo.png"
@@ -53,7 +45,8 @@ export function Navigation() {
           />
         </Link>
 
-        <div className="hidden md:flex items-center gap-8 text-[1.1rem] text-white">
+        {/* LINKS CENTRADOS */}
+        <div className="hidden md:flex items-center gap-10 text-[1.1rem] text-white absolute left-1/2 -translate-x-1/2">
           <Link href="/" className="transition-colors hover:text-[#e8a41f]">
             Inicio
           </Link>
@@ -65,9 +58,10 @@ export function Navigation() {
           </Link>
         </div>
 
+        {/* BOTÓN */}
         <Button
           asChild
-          className="bg-[#E5E6CC] text-foreground hover:bg-white/90 rounded-full px-8 w-36 text-[1.15rem] py-5 pb-6"
+          className="bg-[#E5E6CC] text-foreground hover:bg-white/90 rounded-full px-6 w-36 text-[1.03rem] font-bold py-5"
         >
           <Link href="/contacto">Contacto</Link>
         </Button>

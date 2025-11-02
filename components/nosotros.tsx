@@ -10,16 +10,16 @@ export default function NosotrosPage() {
         {/* Header Section */}
         <section
           className="
-  flex flex-col-reverse xl:flex-row  /* 💡 cambia el orden en pantallas chicas */
-  items-center xl:items-stretch 
-  justify-center
-  px-6 max-w-7xl mx-auto 
-  pt-36 gap-12 md:gap-20 xl:gap-8
-"
+    flex flex-col-reverse xl:flex-row
+    items-center xl:items-end
+    justify-center
+    px-6 max-w-7xl mx-auto 
+    pt-36 gap-12 md:gap-20 xl:gap-8
+  "
         >
           {/* Imagen */}
-          <div className="relative w-full xl:w-[35%] flex justify-center xl:items-end">
-            <div className="relative w-full max-w-[450px] xl:max-w-none h-[350px] sm:h-[400px] xl:h-full">
+          <div className="relative w-full xl:w-[35%] flex justify-center xl:justify-end">
+            <div className="relative w-full max-w-[450px] xl:max-w-none h-[400px] sm:h-[480px] xl:h-[550px]">
               <Image
                 src="/nosotrasAvatar.svg"
                 alt="Nosotros"
@@ -30,7 +30,15 @@ export default function NosotrosPage() {
           </div>
 
           {/* Texto */}
-          <div className="w-full xl:w-[65%] flex flex-col justify-center text-center xl:text-left">
+          <div
+            className="
+      w-full xl:w-[65%]
+      flex flex-col justify-center
+      text-center xl:text-left
+      xl:pb-12  /* 💡 separa el texto del borde inferior */
+      xl:translate-y-[-20px] /* 💡 corrige el centrado visual */
+    "
+          >
             <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-4 text-[#243606]">
               Sobre Nosotras
             </h1>

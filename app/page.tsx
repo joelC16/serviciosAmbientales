@@ -35,11 +35,11 @@ export default function HomePage() {
             </div>
           </div>
 
-          <p className="text-xl md:text-2xl mb-3 mx-auto text-pretty leading-relaxed">
+          <p className="text-[1.2rem] md:text-[1.45rem] mb-3 mx-auto text-pretty leading-relaxed font-bold">
             GESTIÓN AMBIENTAL <span className="px-6">|</span> HIGIENE Y
             SEGURIDAD <span className="px-6">|</span> LABORATORIO
           </p>
-          <p className="text-xl md:text-2xl mb-8 max-w-3xl mx-auto text-pretty leading-relaxed">
+          <p className="text-[1.2rem] md:text-[1.45rem] mb-8 max-w-3xl mx-auto text-pretty leading-relaxed">
             Comprometidos con un futuro sostenible
           </p>
 
