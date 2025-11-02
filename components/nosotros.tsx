@@ -175,8 +175,6 @@ export default function NosotrosPage() {
                       Desarrollamos e implementamos soluciones innovadoras que
                       permiten optimizar los procesos productivos y minimizar el
                       consumo de recursos naturales,
-                    </p>
-                    <p className="text-[#3F3A34] text-base sm:text-lg lg:text-[1.2rem] w-full">
                       contribuyendo así a una gestión más eficiente y
                       sostenible.
                     </p>

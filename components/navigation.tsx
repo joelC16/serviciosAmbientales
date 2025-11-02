@@ -47,13 +47,13 @@ export function Navigation() {
 
         {/* LINKS CENTRADOS */}
         <div className="hidden md:flex items-center gap-10 text-[1.1rem] text-white absolute left-1/2 -translate-x-1/2">
-          <Link href="/" className="transition-colors hover:text-[#e8a41f]">
+          <Link href="/" className="w-20 transition-colors hover:text-[#e8a41f]">
             Inicio
           </Link>
-          <Link href="/nosotros" className="transition-colors hover:text-[#e8a41f]">
+          <Link href="/nosotros" className="w-20 transition-colors hover:text-[#e8a41f]">
             Nosotros
           </Link>
-          <Link href="/servicios" className="transition-colors hover:text-[#e8a41f]">
+          <Link href="/servicios" className="w-20 transition-colors hover:text-[#e8a41f]">
             Servicios
           </Link>
         </div>
