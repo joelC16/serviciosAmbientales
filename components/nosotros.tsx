@@ -146,7 +146,7 @@ export default function NosotrosPage() {
                       className="w-14 sm:w-20 h-auto"
                     />
                     <p className="text-sm sm:text-base font-medium text-center leading-tight">
-                      Responsabilidad <br /> ambiental
+                      Responsabilidad
                     </p>
                   </div>
                 </div>
