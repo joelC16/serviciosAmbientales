@@ -45,25 +45,26 @@ export default function ContactoPage() {
   return (
     <div
       id="contacto"
-      className="min-h-screen flex flex-col bg-background relative"
+      className="min-h-[90vh] flex flex-col bg-background relative"
     >
-      <main className="relative flex-1 py-12 px-2 sm:py-14 sm:px-4">
+      <main className="relative flex-1 py-10 px-4 sm:py-12 sm:px-6 lg:px-8">
         <Image
           className="absolute inset-0 object-cover object-center"
           src={"/imgContacto.jpg"}
           fill
           alt="Imagen de contacto"
+          priority
         />
 
-        <div className="container mx-auto max-w-7xl relative">
-          <h1 className="text-5xl font-bold mb-8 text-white text-center">
+        <div className="container mx-auto max-w-6xl relative">
+          <h1 className="text-4xl sm:text-5xl font-bold mb-8 text-white text-center drop-shadow-lg">
             Contacto
           </h1>
 
-          <div className="flex flex-col md:flex-row gap-10 items-stretch">
+          <div className="flex flex-col md:flex-row md:items-stretch gap-8">
             {/* Bloque verde */}
-            <div className="flex-1 bg-[#7F8000] text-white rounded-3xl p-10 flex flex-col items-center justify-center">
-              <h2 className="text-3xl font-bold mb-6 text-center">
+            <div className="flex-1 bg-[#7F8000] text-white rounded-3xl p-8 md:p-10 flex flex-col items-center justify-center shadow-md">
+              <h2 className="text-2xl sm:text-3xl font-bold mb-5 text-center">
                 ¡Contactanos!
               </h2>
 
@@ -73,47 +74,50 @@ export default function ContactoPage() {
               >
                 <Image
                   src="/iconEmail.svg"
-                  width={40}
-                  height={40}
+                  width={36}
+                  height={36}
                   alt="Email"
                 />
               </a>
 
-              <p className="text-lg font-bold my-6 text-center">
+              <p className="text-base sm:text-lg font-bold my-5 text-center break-words">
                 sambientales.arg@gmail.com
               </p>
 
-              <div className="flex gap-6 justify-center">
+              <div className="flex gap-5 justify-center flex-wrap">
                 <a
                   href="https://api.whatsapp.com/message/OR6EH2233ZJGE1?autoload=1&app_absent=0"
                   target="_blank"
+                  rel="noopener noreferrer"
                 >
                   <Image
                     src="/iconWpp.png"
-                    width={40}
-                    height={40}
+                    width={36}
+                    height={36}
                     alt="WhatsApp"
                   />
                 </a>
                 <a
                   href="https://www.instagram.com/ssas.serviciosambientales/"
                   target="_blank"
+                  rel="noopener noreferrer"
                 >
                   <Image
                     src="/iconIg.png"
-                    width={40}
-                    height={40}
+                    width={36}
+                    height={36}
                     alt="Instagram"
                   />
                 </a>
                 <a
                   href="https://www.linkedin.com/company/ssas-servicios-ambientales/?originalSubdomain=ar"
                   target="_blank"
+                  rel="noopener noreferrer"
                 >
                   <Image
                     src="/iconLinkedin.png"
-                    width={40}
-                    height={40}
+                    width={36}
+                    height={36}
                     alt="LinkedIn"
                   />
                 </a>
@@ -123,12 +127,11 @@ export default function ContactoPage() {
             {/* Formulario */}
             <form
               onSubmit={handleSubmit}
-              className="flex-1 space-y-6 bg-white rounded-3xl p-10 shadow-lg"
+              className="flex-1 space-y-5 bg-white rounded-3xl p-8 md:p-10 shadow-lg"
             >
               {(["name", "email", "subject"] as const).map((field) => (
-
                 <div key={field}>
-                  <label className="block text-[#243606] mb-2">
+                  <label className="block text-[#243606] mb-2 text-sm sm:text-base">
                     {field === "name"
                       ? "Nombre y Apellido"
                       : field === "email"
@@ -141,38 +144,43 @@ export default function ContactoPage() {
                     value={formData[field]}
                     onChange={handleChange}
                     required
-                    className="w-full border-b-2 border-[#243606]/30 bg-transparent py-2 focus:border-[#243606] focus:outline-none text-[#243606]"
+                    className="w-full border-b-2 border-[#243606]/30 bg-transparent py-2 text-sm sm:text-base focus:border-[#243606] focus:outline-none text-[#243606]"
                   />
                 </div>
               ))}
 
               <div>
-                <label className="block text-[#243606] mb-2">Mensaje</label>
+                <label className="block text-[#243606] mb-2 text-sm sm:text-base">
+                  Mensaje
+                </label>
                 <textarea
                   name="message"
-                  rows={5}
+                  rows={4}
                   value={formData.message}
                   onChange={handleChange}
                   required
-                  className="w-full border-b-2 border-[#243606]/30 bg-transparent py-2 focus:border-[#243606] focus:outline-none resize-none text-[#243606]"
+                  className="w-full border-b-2 border-[#243606]/30 bg-transparent py-2 text-sm sm:text-base focus:border-[#243606] focus:outline-none resize-none text-[#243606]"
                 />
               </div>
 
               <button
                 type="submit"
-                className="w-full bg-[#F6B317] hover:bg-[#d99410] text-[#243606] rounded-full py-3 px-6 text-base font-semibold transition-colors"
+                className="w-full bg-[#F6B317] hover:bg-[#d99410] text-[#243606] rounded-full py-3 px-6 text-sm sm:text-base font-semibold transition-colors"
               >
                 Enviar
               </button>
 
               {status && (
-                <p className="text-center mt-3 text-[#243606]">{status}</p>
+                <p className="text-center mt-2 text-[#243606] text-sm sm:text-base">
+                  {status}
+                </p>
               )}
             </form>
           </div>
         </div>
       </main>
-      <Footer></Footer>
+
+      <Footer />
     </div>
   );
 }
