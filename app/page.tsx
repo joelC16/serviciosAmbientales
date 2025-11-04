@@ -8,7 +8,7 @@ import Contacto from "@/components/contacto";
 
 export default function HomePage() {
   return (
-    <div className="min-h-screen flex flex-col">
+    <div id="inicio" className="min-h-screen flex flex-col">
       <Navigation />
 
       {/* Hero Section */}
@@ -26,7 +26,7 @@ export default function HomePage() {
 
         <div className="relative z-10 container mx-auto px-6 text-center">
           <div className="mb-8 flex flex-row items-center justify-center">
-            <div className="relative w-[80%] sm:w-2/3 lg:w-[45%] h-55">
+            <div className="relative w-[75%] sm:w-[60%] lg:w-[40%] h-55">
               <Image
                 src={"/logoHeader.svg"}
                 fill
@@ -35,11 +35,11 @@ export default function HomePage() {
             </div>
           </div>
 
-          <p className="text-[1.05rem] md:text-[1.30rem] mb-3 mx-auto text-pretty leading-relaxed font-bold">
+          <p className="text-[1rem] md:text-[1.2rem] mb-3 mx-auto text-pretty leading-relaxed font-bold">
             GESTIÓN AMBIENTAL <span className="px-6">|</span> HIGIENE Y
             SEGURIDAD <span className="px-6">|</span> LABORATORIO
           </p>
-          <p className="text-[1.2rem] md:text-[1.30rem] mb-8 max-w-3xl mx-auto text-pretty leading-relaxed">
+          <p className="text-[1.1rem] md:text-[1.2rem] mb-8 max-w-3xl mx-auto text-pretty leading-relaxed">
             Comprometidos con un futuro sostenible
           </p>
 

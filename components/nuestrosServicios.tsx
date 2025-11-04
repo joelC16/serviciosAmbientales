@@ -66,7 +66,10 @@ export default function NuestrosServicios() {
   const setExpandedStates = [setExpanded1, setExpanded2, setExpanded3];
 
   return (
-    <section className="py-20 px-6 sm:px-10 bg-white overflow-hidden">
+    <section
+      id="servicios"
+      className="py-20 px-6 sm:px-10 bg-white overflow-hidden"
+    >
       <h1 className="text-5xl md:text-6xl font-bold mb-14 text-balance text-[#243606] text-center">
         Nuestros servicios
       </h1>
@@ -94,9 +97,13 @@ export default function NuestrosServicios() {
         ))}
       </div>
       <div className="flex items-center justify-center w-full mt-14">
-        <button className="w-fit bg-[#F6B317] hover:bg-[#d99410] text-foreground rounded-full py-5 px-14 text-[1.1rem] font-semibold transition-colors duration-200">
+        <a
+          href="/brochure.pdf"
+          download
+          className="w-fit bg-[#F6B317] hover:bg-[#d99410] text-foreground rounded-full py-5 px-14 text-[1.1rem] font-semibold transition-colors duration-200"
+        >
           Descargar Brochure Completo
-        </button>
+        </a>
       </div>
     </section>
   );

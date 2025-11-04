@@ -18,7 +18,7 @@ export default function NosotrosPage() {
   "
         >
           {/* Imagen */}
-          <div className="relative w-full xl:w-[35%] flex justify-center xl:justify-end">
+          <div id="nosotros" className="relative w-full xl:w-[35%] flex justify-center xl:justify-end">
             <div className="relative w-full max-w-[450px] xl:max-w-none h-[400px] sm:h-[480px] xl:h-[550px]">
               <Image
                 src="/nosotrasAvatar.svg"

@@ -47,15 +47,15 @@ export function Navigation() {
 
         {/* LINKS CENTRADOS */}
         <div className="hidden md:flex items-center gap-10 text-[1.1rem] text-white absolute left-1/2 -translate-x-1/2">
-          <Link href="/" className="w-20 transition-colors hover:text-[#e8a41f]">
+          <a href="#inicio" className="w-20 transition-colors hover:text-[#e8a41f]">
             Inicio
-          </Link>
-          <Link href="/nosotros" className="w-20 transition-colors hover:text-[#e8a41f]">
+          </a>
+          <a href="#nosotros" className="w-20 transition-colors hover:text-[#e8a41f]">
             Nosotros
-          </Link>
-          <Link href="/servicios" className="w-20 transition-colors hover:text-[#e8a41f]">
+          </a>
+          <a href="#servicios" className="w-20 transition-colors hover:text-[#e8a41f]">
             Servicios
-          </Link>
+          </a>
         </div>
 
         {/* BOTÓN */}
@@ -63,7 +63,7 @@ export function Navigation() {
           asChild
           className="bg-[#E5E6CC] text-foreground hover:bg-white/90 rounded-full px-6 w-36 text-[1.03rem] font-bold py-5"
         >
-          <Link href="/contacto">Contacto</Link>
+          <a href="#contacto">Contacto</a>
         </Button>
       </div>
     </nav>
