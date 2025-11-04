@@ -34,7 +34,7 @@ export function Navigation() {
         showNav ? "translate-y-0" : "-translate-y-full"
       } ${bgGreen ? "bg-[#2d4a1f]" : "bg-transparent"}`}
     >
-      <div className="relative container mx-auto px-6 py-6 flex items-center justify-between">
+      <div className="relative container mx-auto px-6 py-4 flex items-center justify-between">
         {/* LOGO */}
         <Link href="/" className="text-2xl font-bold w-36 text-white">
           <Image
