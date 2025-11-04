@@ -57,7 +57,7 @@ export default function ContactoPage() {
         />
 
         <div className="container mx-auto max-w-6xl relative">
-          <h1 className="text-4xl sm:text-5xl font-bold mb-8 text-white text-center drop-shadow-lg">
+          <h1 className="text-[1.8rem] sm:text-[2.2rem] font-bold mb-8 text-white text-center drop-shadow-lg">
             Contacto
           </h1>
 
