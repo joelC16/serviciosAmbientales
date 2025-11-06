@@ -14,11 +14,14 @@ export default function NosotrosPage() {
     items-center xl:items-end
     justify-center
     px-6 max-w-7xl mx-auto 
-    pt-36 gap-12 md:gap-20 xl:gap-8
+    pt-16 gap-12 md:gap-20 xl:gap-8
   "
         >
           {/* Imagen */}
-          <div id="nosotros" className="relative w-full xl:w-[35%] flex justify-center xl:justify-end">
+          <div
+            id="nosotros"
+            className="relative w-full xl:w-[35%] flex justify-center xl:justify-end"
+          >
             <div className="relative w-full max-w-[450px] xl:max-w-none h-[400px] sm:h-[480px] xl:h-[550px]">
               <Image
                 src="/nosotrasAvatar.svg"
@@ -82,70 +85,80 @@ export default function NosotrosPage() {
               >
                 <div
                   className="
-        flex flex-wrap justify-center items-center
-        gap-16 sm:gap-18
-        text-center
-      "
+    flex flex-wrap justify-center items-center
+    gap-16 sm:gap-18
+    text-center
+  "
                 >
-                  <div className="flex flex-col items-center gap-2 sm:gap-3">
-                    <Image
-                      src="/emojiConfianza.png"
-                      width={80}
-                      height={80}
-                      alt="Confianza"
-                      className="w-12 sm:w-16 h-auto"
-                    />
+                  <div className="flex flex-col items-center gap-3 w-[100px] sm:w-[120px]">
+                    <div className="w-16 h-16 sm:w-20 sm:h-20 flex items-center justify-center">
+                      <Image
+                        src="/emojiConfianza.png"
+                        alt="Confianza"
+                        width={80}
+                        height={80}
+                        className="object-contain w-full h-full"
+                      />
+                    </div>
                     <p className="text-sm sm:text-base font-medium">
                       Confianza
                     </p>
                   </div>
 
-                  <div className="flex flex-col items-center gap-2 sm:gap-3">
-                    <Image
-                      src="/emojiTransparencia.png"
-                      width={80}
-                      height={80}
-                      alt="Transparencia"
-                      className="w-12 sm:w-16 h-auto"
-                    />
+                  <div className="flex flex-col items-center gap-3 w-[100px] sm:w-[120px]">
+                    <div className="w-16 h-16 sm:w-20 sm:h-20 flex items-center justify-center">
+                      <Image
+                        src="/emojiTransparencia.png"
+                        alt="Transparencia"
+                        width={80}
+                        height={80}
+                        className="object-contain w-full h-full"
+                      />
+                    </div>
                     <p className="text-sm sm:text-base font-medium">
                       Transparencia
                     </p>
                   </div>
 
-                  <div className="flex flex-col items-center gap-2 sm:gap-3">
-                    <Image
-                      src="/emojiCalidad.png"
-                      width={70}
-                      height={70}
-                      alt="Calidad"
-                      className="w-11 sm:w-14 h-auto"
-                    />
+                  <div className="flex flex-col items-center gap-3 w-[100px] sm:w-[120px]">
+                    <div className="w-16 h-16 sm:w-20 sm:h-20 flex items-center justify-center">
+                      <Image
+                        src="/emojiCalidad.png"
+                        alt="Calidad"
+                        width={80}
+                        height={80}
+                        className="object-contain w-full h-full"
+                      />
+                    </div>
                     <p className="text-sm sm:text-base font-medium">Calidad</p>
                   </div>
 
-                  <div className="flex flex-col items-center gap-2 sm:gap-3">
-                    <Image
-                      src="/emojiEficiencia.png"
-                      width={80}
-                      height={80}
-                      alt="Eficiencia"
-                      className="w-12 sm:w-16 h-auto"
-                    />
+                  <div className="flex flex-col items-center gap-3 w-[100px] sm:w-[120px]">
+                    <div className="w-16 h-16 sm:w-20 sm:h-20 flex items-center justify-center">
+                      <Image
+                        src="/emojiEficiencia.png"
+                        alt="Eficiencia"
+                        width={80}
+                        height={80}
+                        className="object-contain w-full h-full"
+                      />
+                    </div>
                     <p className="text-sm sm:text-base font-medium">
                       Eficiencia
                     </p>
                   </div>
 
-                  <div className="flex flex-col items-center gap-2 sm:gap-3">
-                    <Image
-                      src="/emojiResponsabilidadAmbiental.png"
-                      width={95}
-                      height={95}
-                      alt="Responsabilidad ambiental"
-                      className="w-14 sm:w-20 h-auto"
-                    />
-                    <p className="text-sm sm:text-base font-medium text-center leading-tight">
+                  <div className="flex flex-col items-center gap-3 w-[100px] sm:w-[120px]">
+                    <div className="w-19 h-19 sm:w-24 sm:h-24 flex items-center justify-center">
+                      <Image
+                        src="/emojiResponsabilidadAmbiental.png"
+                        alt="Responsabilidad ambiental"
+                        width={95}
+                        height={95}
+                        className="object-contain w-full h-full scale-110"
+                      />
+                    </div>
+                    <p className="text-sm sm:text-base font-medium text-center leading-tight mb-3">
                       Responsabilidad
                     </p>
                   </div>
@@ -174,9 +187,8 @@ export default function NosotrosPage() {
                     <p className="text-[#3F3A34] text-base sm:text-lg lg:text-[1.2rem] w-full">
                       Desarrollamos e implementamos soluciones innovadoras que
                       permiten optimizar los procesos productivos y minimizar el
-                      consumo de recursos naturales,
-                      contribuyendo así a una gestión más eficiente y
-                      sostenible.
+                      consumo de recursos naturales, contribuyendo así a una
+                      gestión más eficiente y sostenible.
                     </p>
                   </div>
                 </div>

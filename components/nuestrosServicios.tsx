@@ -119,13 +119,12 @@ function ServicioBloque({
   color,
   colorTexto,
   imagenDerecha,
-  esSegundo,
 }: any) {
   return (
     <>
       <div
         className={`
-          ${color}  rounded-[2rem] p-6
+          ${color} rounded-[2rem] p-13
           relative z-20 flex flex-col md:flex-row transition-all duration-500 ease-out
           ${
             expanded
@@ -134,36 +133,13 @@ function ServicioBloque({
           }
         `}
       >
-        {/* CONTENIDO SECUNDARIO - SOLO PARA EL SEGUNDO BLOQUE EXPANDIDO */}
-        {esSegundo && expanded && (
-          <div
-            className={`
-              md:w-[65%] flex flex-col justify-start p-6
-              transition-all duration-500 ease-out
-              transform translate-x-0
-            `}
-          >
-            <ul
-              className={`text-base sm:text-lg leading-relaxed space-y-2 list-disc pl-5`}
-            >
-              {lista.map((item: string, idx: number) => (
-                <li className={`${colorTexto} text-black`} key={idx}>
-                  {item}
-                </li>
-              ))}
-            </ul>
-          </div>
-        )}
-
-        {/* TEXTO PRINCIPAL */}
+        {/* CONTENIDO PRINCIPAL */}
         <div
           className={`
             flex flex-col transition-all duration-500 ease-out
             ${
               expanded
-                ? esSegundo
-                  ? "w-full md:w-[35%] md:justify-start text-left"
-                  : "w-full md:w-[35%] md:justify-start text-left"
+                ? "w-full md:w-[35%] md:justify-start text-left"
                 : "w-full justify-end text-left"
             }
             relative z-20
@@ -188,8 +164,8 @@ function ServicioBloque({
           </button>
         </div>
 
-        {/* CONTENIDO SECUNDARIO - PARA TODOS LOS BLOQUES EXCEPTO EL SEGUNDO */}
-        {!esSegundo && expanded && (
+        {/* CONTENIDO EXPANDIDO */}
+        {expanded && (
           <div
             className={`
               md:w-[65%] flex flex-col justify-start p-6
@@ -198,7 +174,7 @@ function ServicioBloque({
           >
             <ul className="text-base sm:text-lg leading-relaxed space-y-2 list-disc pl-5">
               {lista.map((item: string, idx: number) => (
-                <li className={`${colorTexto} `} key={idx}>
+                <li className={`${colorTexto}`} key={idx}>
                   {item}
                 </li>
               ))}
@@ -231,3 +207,4 @@ function ServicioBloque({
     </>
   );
 }
+
