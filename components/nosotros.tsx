@@ -149,12 +149,12 @@ export default function NosotrosPage() {
                   </div>
 
                   <div className="flex flex-col items-center gap-3 w-[100px] sm:w-[120px]">
-                    <div className="w-18 h-16 sm:w-20 sm:h-22 flex items-center justify-center">
+                    <div className="w-15 h-15 sm:w-19 sm:h-19 flex items-center justify-center">
                       <Image
                         src="/emojiResponsabilidadAmbiental.png"
                         alt="Responsabilidad ambiental"
-                        width={85}
-                        height={80}
+                        width={75}
+                        height={75}
                         className="object-contain w-full h-full scale-110"
                       />
                     </div>
