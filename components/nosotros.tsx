@@ -158,7 +158,7 @@ export default function NosotrosPage() {
                         className="object-contain w-full h-full scale-110"
                       />
                     </div>
-                    <p className="text-sm sm:text-base font-medium text-center leading-tight mb-3">
+                    <p className="text-sm sm:text-base font-medium text-center leading-tight">
                       Responsabilidad
                     </p>
                   </div>
