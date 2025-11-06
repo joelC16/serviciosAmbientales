@@ -153,8 +153,8 @@ export default function NosotrosPage() {
                       <Image
                         src="/emojiResponsabilidadAmbiental.png"
                         alt="Responsabilidad ambiental"
-                        width={72}
-                        height={72}
+                        width={70}
+                        height={70}
                         className="object-contain w-full h-full scale-110"
                       />
                     </div>
