@@ -100,7 +100,7 @@ export default function NuestrosServicios() {
         <a
           href="/brochure.pdf"
           download
-          className="w-fit bg-[#F6B317] hover:bg-[#d99410] text-foreground rounded-full py-5 px-14 text-[1.1rem] font-semibold transition-colors duration-200"
+          className="w-fit bg-[#F6B317] hover:bg-[#d99410] text-foreground text-center rounded-full py-5 px-14 text-[1.1rem] font-semibold transition-colors duration-200"
         >
           Descargar Brochure Completo
         </a>

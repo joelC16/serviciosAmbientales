@@ -90,10 +90,10 @@ export default function NosotrosPage() {
     text-center
   "
                 >
-                  <div className="flex flex-col items-center gap-3 w-[100px] sm:w-[120px]">
+                  <div className="flex flex-col items-center gap-3 w-[100px] sm:w-[120px] h-[120px] justify-between">
                     <div className="w-16 h-16 sm:w-20 sm:h-20 flex items-center justify-center">
                       <Image
-                        src="/emojiConfianza.png"
+                        src="/iconoConfianza.svg"
                         alt="Confianza"
                         width={80}
                         height={80}
@@ -105,10 +105,10 @@ export default function NosotrosPage() {
                     </p>
                   </div>
 
-                  <div className="flex flex-col items-center gap-3 w-[100px] sm:w-[120px]">
+                  <div className="flex flex-col items-center gap-3 w-[100px] sm:w-[120px] h-[120px] justify-between">
                     <div className="w-16 h-16 sm:w-20 sm:h-20 flex items-center justify-center">
                       <Image
-                        src="/emojiTransparencia.png"
+                        src="/iconoTransparencia.svg"
                         alt="Transparencia"
                         width={80}
                         height={80}
@@ -120,10 +120,10 @@ export default function NosotrosPage() {
                     </p>
                   </div>
 
-                  <div className="flex flex-col items-center gap-3 w-[100px] sm:w-[120px]">
+                  <div className="flex flex-col items-center gap-3 w-[100px] sm:w-[120px] h-[120px] justify-between">
                     <div className="w-16 h-16 sm:w-20 sm:h-20 flex items-center justify-center">
                       <Image
-                        src="/emojiCalidad.png"
+                        src="/iconoCalidad.svg"
                         alt="Calidad"
                         width={80}
                         height={80}
@@ -133,10 +133,10 @@ export default function NosotrosPage() {
                     <p className="text-sm sm:text-base font-medium">Calidad</p>
                   </div>
 
-                  <div className="flex flex-col items-center gap-3 w-[100px] sm:w-[120px]">
+                  <div className="flex flex-col items-center gap-3 w-[100px] sm:w-[120px] h-[120px] justify-between">
                     <div className="w-16 h-16 sm:w-20 sm:h-20 flex items-center justify-center">
                       <Image
-                        src="/emojiEficiencia.png"
+                        src="/iconoEficiencia.svg"
                         alt="Eficiencia"
                         width={80}
                         height={80}
@@ -148,14 +148,14 @@ export default function NosotrosPage() {
                     </p>
                   </div>
 
-                  <div className="flex flex-col items-center gap-3 w-[100px] sm:w-[120px]">
-                    <div className="w-15 h-15 sm:w-19 sm:h-19 flex items-center justify-center">
+                  <div className="flex flex-col items-center gap-3 w-[100px] sm:w-[120px] h-[120px] justify-between">
+                    <div className="w-16 h-16 sm:w-20 sm:h-20 flex items-center justify-center">
                       <Image
-                        src="/emojiResponsabilidadAmbiental.png"
+                        src="/iconoResponsabilidad.svg"
                         alt="Responsabilidad ambiental"
-                        width={70}
-                        height={70}
-                        className="object-contain w-full h-full scale-110"
+                        width={80}
+                        height={80}
+                        className="object-contain w-full h-full scale-140"
                       />
                     </div>
                     <p className="text-sm sm:text-base font-medium text-center leading-tight">
